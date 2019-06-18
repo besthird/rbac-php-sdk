@@ -1,0 +1,40 @@
+{
+    "name": "besthird/rbac-php-sdk",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "component"
+    ],
+    "description": "RBAC PHP SDK",
+    "authors": [
+        {
+            "name": "李铭昕",
+            "email": "l@hyperf.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Besthird\\RbacSdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "swoft/swoole-ide-helper": "dev-master",
+        "phpunit/phpunit": "^5.7",
+        "phpstan/phpstan": "^0.10.5",
+        "friendsofphp/php-cs-fixer": "^2.14"
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml --colors=always",
+        "cs-fix": "php-cs-fixer fix $1"
+    }
+}
