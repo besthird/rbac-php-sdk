@@ -1,7 +1,7 @@
 <?php
 
 $header = <<<'EOF'
-This file is part of besthrid.
+This file is part of besthird.
 
 @contact  l@hyperf.io
 EOF;
