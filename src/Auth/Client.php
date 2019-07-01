@@ -32,4 +32,9 @@ class Client extends KernelClient
 
         return $this->format($response->getBody()->getContents());
     }
+
+    public function routers()
+    {
+        // TODO: routers of user.
+    }
 }

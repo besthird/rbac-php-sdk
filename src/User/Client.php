@@ -13,4 +13,8 @@ use Besthird\RbacSdk\Kernel\Client as KernelClient;
 
 class Client extends KernelClient
 {
+    public function save()
+    {
+        // TODO: Added a user.
+    }
 }
