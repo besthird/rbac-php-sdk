@@ -6,5 +6,4 @@ declare(strict_types=1);
  *
  * @contact  l@hyperf.io
  */
-
 require_once dirname(dirname(__FILE__)) . '/vendor/autoload.php';

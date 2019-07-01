@@ -25,7 +25,8 @@
     },
     "require": {
         "php": ">=7.2",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "hyperf/utils": "1.0.*"
     },
     "require-dev": {
         "swoft/swoole-ide-helper": "dev-master",
