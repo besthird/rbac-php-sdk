@@ -23,6 +23,8 @@ class AuthTest extends AbstractTestCase
 
         $res = $client->auth->check('admin', 1, 'GET', '/');
 
+        var_dump($res);
+        
         $this->assertSame(0, $res[0]);
     }
 
