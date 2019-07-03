@@ -33,8 +33,13 @@ class Client extends KernelClient
         return $this->format($response->getBody()->getContents());
     }
 
-    public function routers()
+    public function routers($id)
     {
         // TODO: routers of user.
+        $response = $this->client->get('/auth/routers?user_id='.$id);
+        
+        return $this->format($response->getBody()->getContents());
     }
+
+
 }

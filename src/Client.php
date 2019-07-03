@@ -23,7 +23,7 @@ class Client
     protected $clients;
 
     protected $options = [
-        'base_uri' => 'http://127.0.0.1:9502',
+        'base_uri' => 'http://ryan-chen.com:9502',
     ];
 
     public function __construct($options = [])

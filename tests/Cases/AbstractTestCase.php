@@ -17,6 +17,6 @@ use PHPUnit\Framework\TestCase;
 abstract class AbstractTestCase extends TestCase
 {
     protected $defaultConfig = [
-        'base_uri' => 'http://127.0.0.1:9502',
+        'base_uri' => 'http://ryan-chen.com:9502',
     ];
 }

@@ -21,8 +21,19 @@ class AuthTest extends AbstractTestCase
     {
         $client = new Client($this->defaultConfig);
 
-        $res = $client->auth->check(1, 1, 'GET', '/');
+        $res = $client->auth->check(2, 2, 'GET', '/');
 
         var_dump($res);
     }
+
+    public function testAuthRouters()
+    {
+        $client = new Client($this->defaultConfig);
+
+        $res = $client->auth->routers(1);
+
+        var_dump($res);
+    }
+
+
 }
