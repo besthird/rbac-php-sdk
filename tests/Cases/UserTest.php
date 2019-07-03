@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -22,7 +23,7 @@ class UserTest extends AbstractTestCase
     {
         $client = new Client($this->defaultConfig);
 
-        $res = $client->user->save(0, "root", "超级管理员1", ["1"], "18850262552", "1");
+        $res = $client->user->save(0, 'admin2', 'besthird', 'besthird', [1, 3], '15904435046', 1);
 
         var_dump($res);
 

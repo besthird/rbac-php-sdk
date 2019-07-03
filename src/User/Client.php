@@ -13,7 +13,7 @@ use Besthird\RbacSdk\Kernel\Client as KernelClient;
 
 class Client extends KernelClient
 {
-    public function save($id, $key, $name, $roleId, $mobile, $status)
+    public function save($id, $key, $password, $name, $role_id = [], $mobile, $status)
     {
         // TODO: Added a user.
         $response = $this->client->post('/user/save', [
@@ -21,7 +21,8 @@ class Client extends KernelClient
                 'id' => $id,
                 'key' => $key,
                 'name' => $name,
-                'role_id' => $roleId,
+                'password' => $password,
+                'role_id' => $role_id,
                 'mobile' => $mobile,
                 'status' => $status,
             ],
@@ -31,7 +32,6 @@ class Client extends KernelClient
     }
     public function find($id)
     {
-
         $response = $this->client->get('/user/find?id='.$id);
 
         return $this->format($response->getBody()->getContents());
@@ -53,12 +53,21 @@ class Client extends KernelClient
                 'id' => $id,
             ],
         ]);
-
         return $this->format($response->getBody()->getContents());
     }
-    public function index()
+    public function index($id, $name, $mobile, $status, $limit, $offset)
     {
-        $response = $this->client->get('/user');
+        $response = $this->client->get('/user', [
+            'json' => [
+                'id' => $id,
+                'mobile' => $mobile,
+                'name' => $name,
+                'status' => $status,
+                'limit' => $limit,
+                'offset' => $offset,
+            ],
+        ]);
+
         return $this->format($response->getBody()->getContents());
     }
 }
