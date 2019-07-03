@@ -21,9 +21,9 @@ class UserTest extends AbstractTestCase
     {
         $client = new Client($this->defaultConfig);
 
-        $res = $client->user->save(0, 'admin2', 'besthird', 'besthird', [1, 3], '15904435046', 1);
+        $res = $client->user->save(1, 'admin', 'besthird', '超级管理员', [1, 3], '15963611521', 1);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testUserFind()
@@ -32,7 +32,7 @@ class UserTest extends AbstractTestCase
 
         $res = $client->user->find(1);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testUserStatus()
@@ -41,7 +41,7 @@ class UserTest extends AbstractTestCase
 
         $res = $client->user->status(1);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testUserDelete()
@@ -50,7 +50,7 @@ class UserTest extends AbstractTestCase
 
         $res = $client->user->delete(2);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testUserIndex()
@@ -59,6 +59,6 @@ class UserTest extends AbstractTestCase
 
         $res = $client->user->index();
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 }

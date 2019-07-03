@@ -21,9 +21,9 @@ class GroupTest extends AbstractTestCase
     {
         $client = new Client($this->defaultConfig);
 
-        $res = $client->group->save(0, '1', '测试');
+        $res = $client->group->save(1, '1', '默认小组');
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testGroupFind()
@@ -32,7 +32,7 @@ class GroupTest extends AbstractTestCase
 
         $res = $client->group->find(1);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testGroupDelete()
@@ -41,7 +41,7 @@ class GroupTest extends AbstractTestCase
 
         $res = $client->group->delete(2);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testGroupIndex()
@@ -50,6 +50,6 @@ class GroupTest extends AbstractTestCase
 
         $res = $client->group->index();
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 }

@@ -21,9 +21,9 @@ class AuthTest extends AbstractTestCase
     {
         $client = new Client($this->defaultConfig);
 
-        $res = $client->auth->check(2, 2, 'GET', '/');
+        $res = $client->auth->check('admin', 1, 'GET', '/');
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testAuthRouters()
@@ -32,6 +32,6 @@ class AuthTest extends AbstractTestCase
 
         $res = $client->auth->routers(1);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 }

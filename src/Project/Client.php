@@ -15,7 +15,6 @@ class Client extends KernelClient
 {
     public function save($id, $key, $name, $comment)
     {
-        // TODO: Added a user.
         $response = $this->client->post('/project/save', [
             'json' => [
                 'id' => $id,

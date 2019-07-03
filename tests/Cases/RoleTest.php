@@ -23,7 +23,7 @@ class RoleTest extends AbstractTestCase
 
         $res = $client->role->save(0, 'test', '测试角色', 1, [1]);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testRoleInfo()
@@ -32,7 +32,7 @@ class RoleTest extends AbstractTestCase
 
         $res = $client->role->info(1);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testRoleDelete()
@@ -41,7 +41,7 @@ class RoleTest extends AbstractTestCase
 
         $res = $client->role->delete(2);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testRoleIndex()
@@ -50,7 +50,7 @@ class RoleTest extends AbstractTestCase
 
         $res = $client->role->index();
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testRoleRouterList()
@@ -59,7 +59,7 @@ class RoleTest extends AbstractTestCase
 
         $res = $client->role->routerList(1);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testRoleStatus()
@@ -68,6 +68,6 @@ class RoleTest extends AbstractTestCase
 
         $res = $client->role->status(1);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 }

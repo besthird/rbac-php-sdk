@@ -20,10 +20,9 @@ class RouterTest extends AbstractTestCase
     public function testRouterSave()
     {
         $client = new Client($this->defaultConfig);
+        $res = $client->router->save(1, 1, 1, 1, '默认路由', '/', 'GET');
 
-        $res = $client->router->save(0, 1, 1, 1, '测试', '/name', 'POST');
-
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testRouterFind()
@@ -32,7 +31,7 @@ class RouterTest extends AbstractTestCase
 
         $res = $client->router->find(1);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testRouterDelete()
@@ -41,7 +40,7 @@ class RouterTest extends AbstractTestCase
 
         $res = $client->router->delete(2);
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 
     public function testRouterIndex()
@@ -50,6 +49,6 @@ class RouterTest extends AbstractTestCase
 
         $res = $client->router->index();
 
-        var_dump($res);
+        $this->assertSame(0, $res[0]);
     }
 }

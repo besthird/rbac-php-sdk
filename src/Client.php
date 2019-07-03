@@ -13,6 +13,10 @@ use Hyperf\Utils\Str;
 
 /**
  * @property Auth\Client $auth
+ * @property Group\Client $group
+ * @property Project\Client $project
+ * @property Role\Client $role
+ * @property Router\Client $router
  * @property User\Client $user
  */
 class Client

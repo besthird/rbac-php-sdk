@@ -15,7 +15,6 @@ class Client extends KernelClient
 {
     public function save($id, $key, $password, $name, $role_id = [], $mobile, $status)
     {
-        // TODO: Added a user.
         $response = $this->client->post('/user/save', [
             'json' => [
                 'id' => $id,
@@ -59,17 +58,21 @@ class Client extends KernelClient
         return $this->format($response->getBody()->getContents());
     }
 
-    public function index($id, $name, $mobile, $status, $limit, $offset)
+    public function index($id = null, $name = null, $mobile = null, $status = null, $limit = null, $offset = 0)
     {
+        $query = array_filter([
+            'id' => $id,
+            'mobile' => $mobile,
+            'name' => $name,
+            'status' => $status,
+            'limit' => $limit,
+            'offset' => $offset,
+        ], function ($item) {
+            return $item !== null;
+        });
+
         $response = $this->client->get('/user', [
-            'json' => [
-                'id' => $id,
-                'mobile' => $mobile,
-                'name' => $name,
-                'status' => $status,
-                'limit' => $limit,
-                'offset' => $offset,
-            ],
+            'query' => $query,
         ]);
 
         return $this->format($response->getBody()->getContents());
