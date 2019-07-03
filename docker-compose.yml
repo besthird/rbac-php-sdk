@@ -23,6 +23,7 @@ services:
     environment:
       - REDIS_HOST=redis
       - DB_HOST=mysql
+      - DB_DATABASE=rbac
     depends_on:
       - redis
       - mysql
