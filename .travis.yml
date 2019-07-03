@@ -28,7 +28,8 @@ before_install:
 install:
   - cd $TRAVIS_BUILD_DIR
   # 启动服务
-  - docker-compose up
+  - docker-compose up -d
+  - sleep 30
   - bash .build/setup.mysql.sh
   # 安装项目
   - composer self-update
