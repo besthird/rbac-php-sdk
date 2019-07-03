@@ -17,7 +17,6 @@ use Besthird\RbacSdk\Client;
  */
 class UserTest extends AbstractTestCase
 {
-
     public function testUserSave()
     {
         $client = new Client($this->defaultConfig);
@@ -25,8 +24,8 @@ class UserTest extends AbstractTestCase
         $res = $client->user->save(0, 'admin2', 'besthird', 'besthird', [1, 3], '15904435046', 1);
 
         var_dump($res);
-
     }
+
     public function testUserFind()
     {
         $client = new Client($this->defaultConfig);
@@ -34,8 +33,8 @@ class UserTest extends AbstractTestCase
         $res = $client->user->find(1);
 
         var_dump($res);
-
     }
+
     public function testUserStatus()
     {
         $client = new Client($this->defaultConfig);
@@ -43,8 +42,8 @@ class UserTest extends AbstractTestCase
         $res = $client->user->status(1);
 
         var_dump($res);
-
     }
+
     public function testUserDelete()
     {
         $client = new Client($this->defaultConfig);
@@ -52,8 +51,8 @@ class UserTest extends AbstractTestCase
         $res = $client->user->delete(2);
 
         var_dump($res);
-
     }
+
     public function testUserIndex()
     {
         $client = new Client($this->defaultConfig);
@@ -61,9 +60,5 @@ class UserTest extends AbstractTestCase
         $res = $client->user->index();
 
         var_dump($res);
-
     }
-
-
-
 }

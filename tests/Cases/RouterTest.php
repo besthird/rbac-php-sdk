@@ -17,16 +17,15 @@ use Besthird\RbacSdk\Client;
  */
 class RouterTest extends AbstractTestCase
 {
-
     public function testRouterSave()
     {
         $client = new Client($this->defaultConfig);
 
-        $res = $client->router->save(0, 1, 1, 1, "测试", "/name", "POST");
+        $res = $client->router->save(0, 1, 1, 1, '测试', '/name', 'POST');
 
         var_dump($res);
-
     }
+
     public function testRouterFind()
     {
         $client = new Client($this->defaultConfig);
@@ -34,7 +33,6 @@ class RouterTest extends AbstractTestCase
         $res = $client->router->find(1);
 
         var_dump($res);
-
     }
 
     public function testRouterDelete()
@@ -44,8 +42,8 @@ class RouterTest extends AbstractTestCase
         $res = $client->router->delete(2);
 
         var_dump($res);
-
     }
+
     public function testRouterIndex()
     {
         $client = new Client($this->defaultConfig);
@@ -53,9 +51,5 @@ class RouterTest extends AbstractTestCase
         $res = $client->router->index();
 
         var_dump($res);
-
     }
-
-
-
 }

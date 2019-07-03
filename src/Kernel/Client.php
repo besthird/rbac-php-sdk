@@ -28,7 +28,7 @@ abstract class Client
     protected function format(string $body): array
     {
         $data = json_decode($body, true);
-        
+
         if ($data['code'] === self::OK) {
             return [$data['code'], $data['data']];
         }

@@ -27,10 +27,10 @@ class Client extends KernelClient
 
         return $this->format($response->getBody()->getContents());
     }
+
     public function info($id)
     {
-
-        $response = $this->client->get('/project/info?id='.$id);
+        $response = $this->client->get('/project/info?id=' . $id);
 
         return $this->format($response->getBody()->getContents());
     }
@@ -45,6 +45,7 @@ class Client extends KernelClient
 
         return $this->format($response->getBody()->getContents());
     }
+
     public function index()
     {
         $response = $this->client->get('/project');

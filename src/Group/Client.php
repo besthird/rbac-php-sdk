@@ -26,10 +26,10 @@ class Client extends KernelClient
 
         return $this->format($response->getBody()->getContents());
     }
+
     public function find($id)
     {
-
-        $response = $this->client->get('/group/find?id='.$id);
+        $response = $this->client->get('/group/find?id=' . $id);
 
         return $this->format($response->getBody()->getContents());
     }
@@ -44,6 +44,7 @@ class Client extends KernelClient
 
         return $this->format($response->getBody()->getContents());
     }
+
     public function index()
     {
         $response = $this->client->get('/group');

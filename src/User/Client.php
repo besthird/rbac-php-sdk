@@ -30,12 +30,14 @@ class Client extends KernelClient
 
         return $this->format($response->getBody()->getContents());
     }
+
     public function find($id)
     {
-        $response = $this->client->get('/user/find?id='.$id);
+        $response = $this->client->get('/user/find?id=' . $id);
 
         return $this->format($response->getBody()->getContents());
     }
+
     public function status($id)
     {
         $response = $this->client->post('/user/status', [
@@ -46,6 +48,7 @@ class Client extends KernelClient
 
         return $this->format($response->getBody()->getContents());
     }
+
     public function delete($id)
     {
         $response = $this->client->post('/user/delete', [
@@ -55,6 +58,7 @@ class Client extends KernelClient
         ]);
         return $this->format($response->getBody()->getContents());
     }
+
     public function index($id, $name, $mobile, $status, $limit, $offset)
     {
         $response = $this->client->get('/user', [

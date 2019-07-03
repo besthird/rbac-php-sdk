@@ -17,16 +17,15 @@ use Besthird\RbacSdk\Client;
  */
 class GroupTest extends AbstractTestCase
 {
-
     public function testGroupSave()
     {
         $client = new Client($this->defaultConfig);
 
-        $res = $client->group->save(0, "1", "测试");
+        $res = $client->group->save(0, '1', '测试');
 
         var_dump($res);
-
     }
+
     public function testGroupFind()
     {
         $client = new Client($this->defaultConfig);
@@ -34,7 +33,6 @@ class GroupTest extends AbstractTestCase
         $res = $client->group->find(1);
 
         var_dump($res);
-
     }
 
     public function testGroupDelete()
@@ -44,8 +42,8 @@ class GroupTest extends AbstractTestCase
         $res = $client->group->delete(2);
 
         var_dump($res);
-
     }
+
     public function testGroupIndex()
     {
         $client = new Client($this->defaultConfig);
@@ -53,9 +51,5 @@ class GroupTest extends AbstractTestCase
         $res = $client->group->index();
 
         var_dump($res);
-
     }
-
-
-
 }

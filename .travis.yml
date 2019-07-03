@@ -27,10 +27,9 @@ before_install:
 
 install:
   - cd $TRAVIS_BUILD_DIR
-  # 更新扩展
-  #- phpenv config-rm xdebug.ini
-  #- bash tests/swoole.install.sh
-  #- phpenv config-add tests/ci.ini
+  # 启动服务
+  - docker-compose up
+  - bash .build/setup.mysql.sh
   # 安装项目
   - composer self-update
   - cd $TRAVIS_BUILD_DIR

@@ -17,16 +17,15 @@ use Besthird\RbacSdk\Client;
  */
 class RoleTest extends AbstractTestCase
 {
-
     public function testRoleSave()
     {
         $client = new Client($this->defaultConfig);
 
-        $res = $client->role->save(0, "test", "测试角色", 1, [1]);
+        $res = $client->role->save(0, 'test', '测试角色', 1, [1]);
 
         var_dump($res);
-
     }
+
     public function testRoleInfo()
     {
         $client = new Client($this->defaultConfig);
@@ -34,7 +33,6 @@ class RoleTest extends AbstractTestCase
         $res = $client->role->info(1);
 
         var_dump($res);
-
     }
 
     public function testRoleDelete()
@@ -44,8 +42,8 @@ class RoleTest extends AbstractTestCase
         $res = $client->role->delete(2);
 
         var_dump($res);
-
     }
+
     public function testRoleIndex()
     {
         $client = new Client($this->defaultConfig);
@@ -53,8 +51,8 @@ class RoleTest extends AbstractTestCase
         $res = $client->role->index();
 
         var_dump($res);
-
     }
+
     public function testRoleRouterList()
     {
         $client = new Client($this->defaultConfig);
@@ -62,8 +60,8 @@ class RoleTest extends AbstractTestCase
         $res = $client->role->routerList(1);
 
         var_dump($res);
-
     }
+
     public function testRoleStatus()
     {
         $client = new Client($this->defaultConfig);
@@ -71,8 +69,5 @@ class RoleTest extends AbstractTestCase
         $res = $client->role->status(1);
 
         var_dump($res);
-
     }
-
-
 }

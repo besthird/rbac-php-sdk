@@ -22,16 +22,16 @@ class Client extends KernelClient
                 'name' => $name,
                 'comment' => $comment,
                 'status' => $status,
-                'router_list' => $routerList
+                'router_list' => $routerList,
             ],
         ]);
 
         return $this->format($response->getBody()->getContents());
     }
+
     public function info($id)
     {
-
-        $response = $this->client->get('/role/info?id='.$id);
+        $response = $this->client->get('/role/info?id=' . $id);
 
         return $this->format($response->getBody()->getContents());
     }
@@ -46,6 +46,7 @@ class Client extends KernelClient
 
         return $this->format($response->getBody()->getContents());
     }
+
     public function index()
     {
         $response = $this->client->get('/role');
@@ -65,7 +66,7 @@ class Client extends KernelClient
 
     public function routerList($id)
     {
-        $response = $this->client->get('/role/router/list?id='.$id);
+        $response = $this->client->get('/role/router/list?id=' . $id);
         return $this->format($response->getBody()->getContents());
     }
 }

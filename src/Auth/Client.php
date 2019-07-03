@@ -36,10 +36,8 @@ class Client extends KernelClient
     public function routers($id)
     {
         // TODO: routers of user.
-        $response = $this->client->get('/auth/routers?user_id='.$id);
-        
+        $response = $this->client->get('/auth/routers?user_id=' . $id);
+
         return $this->format($response->getBody()->getContents());
     }
-
-
 }

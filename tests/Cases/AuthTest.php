@@ -34,6 +34,4 @@ class AuthTest extends AbstractTestCase
 
         var_dump($res);
     }
-
-
 }
